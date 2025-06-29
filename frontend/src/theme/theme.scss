@@ -1,0 +1,75 @@
+// Make sure SMUI's import happens first, since it specifies variables.
+// @use "@smui/snackbar" as smui-snackbar;
+@use "@material/image-list/mixins" as image-list;
+@use "@material/button/mixins" as mdc-button;
+// See https://github.com/material-components/material-components-web/tree/v14.0.0/packages/mdc-snackbar
+@use "@material/snackbar/mixins" as snackbar;
+// See https://github.com/material-components/material-components-web/tree/v14.0.0/packages/mdc-theme
+@use "@material/theme/color-palette";
+@use "@material/theme/theme-color";
+
+h1 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.text-red {
+  color: #f44336;
+}
+
+.text-yellow {
+  color: #ff9800;
+}
+
+.text-green {
+  color: #4caf50;
+}
+
+.button-submit {
+  @include mdc-button.shape-radius(100%);
+  min-width: 100%;
+  margin-top: 30px;
+}
+
+.my-image-list-standard {
+  @include image-list.standard-columns(4);
+  --mdc-image-list-masonry-column-gap: 16px;
+  --mdc-image-list-item-margin-bottom: 16px;
+  width: calc(80% + 16px);
+  margin: 0 auto; // 水平居中
+}
+
+@media (max-width: 800px) {
+  .my-image-list-standard {
+    width: calc(95% + 16px);
+    margin: auto;
+    @include image-list.standard-columns(4);
+  }
+}
+
+@media (max-width: 599px) {
+  .my-image-list-standard {
+    @include image-list.standard-columns(3);
+  }
+}
+
+.mdc-snackbar.notification-success {
+  @include snackbar.fill-color(color-palette.$green-500);
+  @include snackbar.label-ink-color(
+    theme-color.accessible-ink-color(color-palette.$green-500)
+  );
+}
+
+.mdc-snackbar.notification-warning {
+  @include snackbar.fill-color(color-palette.$orange-500);
+  @include snackbar.label-ink-color(
+    theme-color.accessible-ink-color(color-palette.$orange-500)
+  );
+}
+
+.mdc-snackbar.notification-error {
+  @include snackbar.fill-color(color-palette.$red-500);
+  @include snackbar.label-ink-color(
+    theme-color.accessible-ink-color(color-palette.$red-500)
+  );
+}

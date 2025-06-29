@@ -1,0 +1,29 @@
+{
+  "name": "fridget-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "smui-theme": "^8.0.0-beta.3",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@rollup/wasm-node": "^4.25.0",
+    "@smui/fab": "^8.0.0-beta.3",
+    "@sveltejs/adapter-static": "^3.0.8",
+    "@sveltejs/kit": "^2.20.0",
+    "esbuild-wasm": "^0.21.5",
+    "svelte": "^5.0.0",
+    "svelte-material-ui": "^8.0.0-beta.3",
+    "vite": "^6"
+  },
+  "scripts": {
+    "dev": "./node_modules/vite/bin/vite.js dev",
+    "build": "./node_modules/vite/bin/vite.js build",
+    "preview": "./node_modules/vite/bin/vite.js preview",
+    "prepare": "npm run smui-theme-light && npm run smui-theme-dark",
+    "smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
+    "smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark"
+  }
+}
