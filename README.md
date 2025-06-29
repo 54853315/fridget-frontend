@@ -15,6 +15,8 @@ Special thanks to the original project team for providing such excellent ideas a
 
 利用 [阿里通义千问AI](https://www.aliyun.com/product/tongyi) API，根据你冰箱里现有的食材找到美味的食谱！不再为"今天吃什么"而烦恼，让 AI 来为你搜索最合适的料理。
 
+<img width="797" alt="开发阶段界面预览" src="./frontend/static/images/dev-stage-preview-image.jpeg" />
+
 ### 🚀 核心功能
 
 1️⃣ **智能食谱搜索**：AI 在网络上搜索与你现有食材匹配的食谱
