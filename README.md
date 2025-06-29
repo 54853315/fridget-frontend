@@ -3,12 +3,12 @@
 
 ## 🎯 项目灵感
 
-本项目的灵感来源于 [Fridget_Frontend](https://github.com/sinaetown/Fridget_Frontend.git) 项目。在 YouTube 上观看了他们参加比赛的 Demo 视频后，被这个创意深深吸引，并仔细阅读了他们的代码实现。正巧最近在学习 Svelte 框架，因此决定用 SvelteKit 对这个优秀的项目进行前端重写，作为学习和实践的机会。
+本项目的灵感来源于 [Fridget_Frontend](https://github.com/sinaetown/Fridget_Frontend.git) 项目。在 [YouTube](https://youtu.be/FFFVZ70Mt_E) 上观看了他们参加比赛的 Demo 视频后，被这个创意深深吸引，并仔细阅读了他们的代码实现。正巧最近在学习 Svelte 框架，因此决定用 SvelteKit 对这个优秀的项目进行前端重写，作为学习和实践的机会。
 
 在此向原项目团队表示敬意，感谢他们提供了如此出色的创意和实现思路。
 Special thanks to the original project team for providing such excellent ideas and implementation approaches.
 
-- 🔗 [原后端仓库](https://github.com/sinaetown/Fridget_Backend.git)
+- 🔗 [原后端仓库](https://github.com/sinaetown/FridgetServer.git)
 - 🔗 [原项目前端](https://github.com/sinaetown/Fridget_Frontend.git)
 
 ## 📌 项目介绍
