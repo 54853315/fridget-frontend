@@ -2,15 +2,13 @@
 
 # Dependencies
 /node_modules
-/frontend/node_modules
-/frontend/.svelte-kit
+/.svelte-kit
 
 # Testing
 /coverage
 
 # Production
 /build
-/frontend/build
 
 # Misc
 .DS_Store
@@ -20,7 +18,6 @@
 .env.test.local
 .env.production.local
 !.env.example
-old_package.json
 
 npm-debug.log*
 yarn-debug.log*
