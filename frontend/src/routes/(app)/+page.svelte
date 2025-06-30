@@ -104,7 +104,7 @@
       <Item style="padding: 30px 10px; cursor: pointer;" onclick={() => openRecipeDialog(recipe)}>
         <ImageAspectContainer>
           <Image
-            src={`images/${(i % 12) + 1}.webp`}
+            src={recipe.imageUrl || `images/${(i % 12) + 1}.webp`}
             alt={recipe.name || `食谱 ${i + 1}`}
             style="border-radius: 15px;"
             on:error={e => {
@@ -166,7 +166,7 @@
       <!-- 食谱图片 -->
       <div style="margin-bottom: 20px;">
         <img
-          src={`images/${Math.floor(Math.random() * 12) + 1}.webp`}
+          src={recipe.imageUrl || `images/${Math.floor(Math.random() * 12) + 1}.webp`}
           alt={selectedRecipe.name}
           style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 12px;"
         />
