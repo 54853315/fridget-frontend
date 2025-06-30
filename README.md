@@ -4,7 +4,6 @@
 
 <img width="797" alt="开发阶段界面预览" src="./frontend/static/images/dev-stage-preview-image.jpeg" />
 
-
 ### 🚀 核心功能
 
 1️⃣ **智能食谱搜索**：AI 在网络上搜索与你现有食材匹配的食谱
@@ -16,16 +15,35 @@
 ## 🛠️ 技术栈
 
 ### 前端
-![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
-![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
-![Svelte Material UI](https://img.shields.io/badge/Svelte%20Material%20UI-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white) ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white) ![Svelte Material UI](https://img.shields.io/badge/Svelte%20Material%20UI-FF3E00?style=for-the-badge&logo=svelte&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
 ### AI/ML
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![通义千问](https://img.shields.io/badge/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![通义千问](https://img.shields.io/badge/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE-412991?style=for-the-badge&logo=openai&logoColor=white) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
+## 📋 环境要求
+
+在开始之前，请确保您的开发环境中安装了以下软件：
+
+-   **Node.js**: `^18.0` 或更高版本
+-   **npm**: `^8.0.0` 或更高版本
+
+## 🚀 快速开始
+
+```bash
+git clone https://github.com/54853315/fridget-frontend.git
+cd fridget-frontend/frontend
+npm install
+npm run dev
+```
+应用将在 `http://localhost:5173` 上运行。
+
+**构建生产版本**
+
+```bash
+npm run build
+```
+
+构建后的静态文件将位于 `frontend/build` 目录，可以部署到任何静态网站托管服务。
 
 ## 🏛️ 设计架构
 <img width="797" alt="设计架构" src="./frontend/static/images/architecture-diagram.png" />
