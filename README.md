@@ -1,4 +1,4 @@
-# 🍏 Fridget Frontend
+# 🍏 AI 驱动的食谱推荐网站 Fridget Frontend
 
 本项目是一款基于 SvelteKit 和 [Qwen3](https://www.aliyun.com/product/tongyi) 构建的智能食谱助手。它能根据您拥有的食材，从海量网络食谱中筛选出匹配的菜谱；再结合机器学习算法分析您的口味偏好，最终实现真正个性化的美食推荐，让每一次烹饪都充满惊喜。
 
