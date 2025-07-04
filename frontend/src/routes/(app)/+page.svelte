@@ -92,7 +92,6 @@
       重新加载
     </Button>
   </div>
-  length:{recipes.length}
 {:else if recipes.length === 0}
   <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px; padding: 20px;">
     <Icon class="material-icons" style="font-size: 48px; color: var(--mdc-theme-text-secondary-on-background); margin-bottom: 12px;">restaurant</Icon>
