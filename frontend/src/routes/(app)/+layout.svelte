@@ -9,7 +9,7 @@
   import Tab from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import { goto } from "$app/navigation";
-  import { UserApi, clearTokens } from "$lib/api";
+  import { UserApi, clearTokens, getTokens } from "$lib/api";
 
   import Banner, { Label, Icon, CloseReason } from "@smui/banner";
   import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
@@ -101,7 +101,9 @@
   <TopAppBar variant="static">
     <Row class="app-bar-row">
       <Section class="app-bar-section">
-        <Title>做菜啦</Title>
+        <Title>
+          <span><img src="/images/logo.svg" alt="Fridget Logo" style="height: 70px;padding-top:9px" /></span>
+        </Title>
       </Section>
       <Section class="app-bar-section">
         <TabBar tabs={menu.map(item => item.label)}>
@@ -131,6 +133,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        padding: 0 7rem;
       }
 
       .app-bar-section {
