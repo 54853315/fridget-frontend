@@ -1,13 +1,13 @@
 /** @type {import('@sveltejs/kit').Config} */
-import adapter from "@sveltejs/adapter-static";
+import adapter from "@sveltejs/adapter-node";
 
 const config = {
   kit: {
     adapter: adapter({
-      pages: "build",
-      assets: "build",
-      fallback: "index.html",
-      strict: false
+      // Node适配器配置
+      out: 'build',
+      precompress: true,
+      envPrefix: 'FRIDGET_'
     }),
   },
 };
