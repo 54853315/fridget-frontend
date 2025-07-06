@@ -3,7 +3,10 @@ import { API_CONFIG } from "$lib/api/config";
 
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load({ cookies, fetch }) {
+  console.log("=== SSR Load Function Start ===");
+  console.log("API_CONFIG.baseURL:", API_CONFIG.baseURL);
   const accessToken = cookies.get("accessToken");
+  console.log("accessToken:", accessToken);
 
   if (!accessToken) {
     throw redirect(302, "/login");
