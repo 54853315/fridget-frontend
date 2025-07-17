@@ -35,6 +35,8 @@
   let isPreferenceLoading = $state(false);
 
   // 加载我的食材和烹饪偏好
+  let previousChipCount = 0;
+
   onMount(async () => {
     await loadMyIngredients();
     await loadCookingPreference();
@@ -42,6 +44,9 @@
     // 初始化快照，避免首次数据加载触发保存
     previousSkillsSnapshot = JSON.stringify(formData.haveCulinaryskills);
     previousUtensilsSnapshot = JSON.stringify(formData.haveKitchenUtensils);
+
+    // 初始化 chip 数量
+    previousChipCount = formData.confirmIngredients.length;
 
     // 标记初始化完成
     isInitialized = true;
@@ -151,6 +156,18 @@
     }
   });
 
+
+
+  $effect(() => {
+    if (formData.confirmIngredients.length > previousChipCount) {
+      // A chip was added, likely via separator. Clear the input.
+      setTimeout(() => {
+        formData.inputValue = '';
+      }, 0);
+    }
+    previousChipCount = formData.confirmIngredients.length;
+  });
+
   async function addIngredients(event: CustomEvent<string>) {
     if (formData.confirmIngredients.length === 0) {
       showNotification("请先添加食材", "warning");
@@ -208,6 +225,8 @@
       isIngredientsLoading = false;
     }
   }
+
+  
 </script>
 
 <div class="cook-container">
@@ -220,10 +239,9 @@
       autocomplete$combobox
       chipTrailingAction$class="material-icons"
       chipTrailingAction$aria-label="删除食材"
-      addChipKeys={[",", "\\"]}
+      addChipKeys={[',', '\\']}
       style="width:800px;"
     >
-      <!-- @TODO ChipKeys 有个 bug -->
       {#snippet chipTrailingAction()}cancel{/snippet}
       {#snippet label()}
         {#if formData.confirmIngredients.length > 0}
