@@ -158,3 +158,33 @@
 <Notification bind:message={$notificationStore.message} bind:type={$notificationStore.type} bind:timeout={$notificationStore.timeout} />
 
 {@render children()}
+
+<style>
+  .top-app-bar-container .app-bar-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 7rem;
+  }
+
+  .top-app-bar-container .app-bar-section {
+    flex: 0 0 auto;
+  }
+
+  /* 让顶栏选中项与底色区分开 */
+  :global(.top-app-bar-container .mdc-tab.mdc-tab--active) {
+    border-radius: 6px;
+  }
+
+  :global(.top-app-bar-container .mdc-tab.mdc-tab--active .mdc-tab__text-label) {
+    color: #ffffff !important;
+  }
+
+  :global(.top-app-bar-container .mdc-tab .mdc-tab-indicator__content--underline) {
+    border-color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  :global(.top-app-bar-container .mdc-tab .mdc-tab__ripple) {
+    border-radius: 6px;
+  }
+</style>
