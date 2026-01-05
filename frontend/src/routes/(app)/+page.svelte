@@ -7,7 +7,6 @@
   import { Icon } from "@smui/common";
   import Dialog, { Title, Content, Actions } from "@smui/dialog";
   import Button, { Label as ButtonLabel } from "@smui/button";
-  import IconButton from "@smui/icon-button";
   import List, { Item as ListItem, Text, PrimaryText, SecondaryText } from "@smui/list";
   import { RecipeApi } from "../../lib/api/index.js";
   import { onMount } from "svelte";
@@ -27,9 +26,14 @@
       const data = await RecipeApi.getRecommendedRecipes();
       recipes = data || [];
     } catch (err) {
-      console.error("加载推荐食谱失败:", err);
-      error = "加载推荐食谱失败，请稍后重试";
+      console.error("加载推荐食谱超时:", err);
+      error = "食谱正在生成中...（预计 1 分钟）";
       recipes = [];
+      if (typeof window !== "undefined") {
+        setTimeout(() => {
+          loadRecommendedRecipes();
+        }, 30000);
+      }
     } finally {
       loading = false;
     }
@@ -156,16 +160,16 @@
   surface$style="min-width: 900px; max-height: 90vh; border-radius: 16px;"
 >
   {#if selectedRecipe}
-    <Title id="recipe-dialog-title" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px 0;">
-      <span style="font-size: 24px; font-weight: 600;">{selectedRecipe.name}</span>
-      <IconButton class="material-icons" on:click={closeRecipeDialog} style="margin: -8px;">close</IconButton>
+    <Title id="recipe-dialog-title" class="dialog-header">
+      <span class="dialog-title-text">{selectedRecipe.name}</span>
+      <button class="dialog-close-btn" type="button" on:click={closeRecipeDialog} aria-label="关闭"> × </button>
     </Title>
 
     <Content id="recipe-dialog-content" style="padding: 16px 24px 24px; max-height: 70vh; overflow-y: auto;">
       <!-- 食谱图片 -->
       <div style="margin-bottom: 20px;">
         <img
-          src={recipe.imageUrl || `images/${Math.floor(Math.random() * 12) + 1}.webp`}
+          src={selectedRecipe.imageUrl || `images/${Math.floor(Math.random() * 12) + 1}.webp`}
           alt={selectedRecipe.name}
           style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 12px;"
         />
@@ -355,5 +359,41 @@
     .recipe-steps :global(.mdc-deprecated-list-item .mdc-deprecated-list-item__text) {
       padding-left: 0 !important;
     }
+  }
+
+  .dialog-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 48px 0 24px;
+  }
+
+  .dialog-title-text {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .dialog-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--mdc-theme-on-surface, #fff);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dialog-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
 </style>
