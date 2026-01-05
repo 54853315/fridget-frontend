@@ -79,7 +79,7 @@
         <Icon class="material-icons">password</Icon>
       {/snippet}
       {#snippet trailingIcon()}
-        <Icon class="material-icons">visibility</Icon>
+        <Icon class="material-icons icon-clickable">visibility</Icon>
       {/snippet}
     </TextField>
   </FormField>
@@ -103,5 +103,9 @@
     margin: 0 auto;
     width: 100%;
     /* padding: 20px; */
+  }
+
+  .icon-clickable {
+    cursor: pointer;
   }
 </style>
