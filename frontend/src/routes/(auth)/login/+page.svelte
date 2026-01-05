@@ -50,13 +50,6 @@
   function togglePasswordVisibility() {
     showPassword = !showPassword;
   }
-
-  function handleIconKeyDown(event: KeyboardEvent) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      togglePasswordVisibility();
-    }
-  }
 </script>
 
 <div class="form-container">
@@ -85,14 +78,7 @@
         <Icon class="material-icons">password</Icon>
       {/snippet}
       {#snippet trailingIcon()}
-        <span
-          class="password-toggle icon-clickable"
-          role="button"
-          tabindex="0"
-          aria-pressed={showPassword}
-          on:click={togglePasswordVisibility}
-          on:keydown={handleIconKeyDown}
-        >
+        <span class="password-toggle icon-clickable" role="button" tabindex="0" aria-pressed={showPassword} on:click={togglePasswordVisibility}>
           <Icon class="material-icons" aria-hidden="true">
             {showPassword ? "visibility_off" : "visibility"}
           </Icon>
