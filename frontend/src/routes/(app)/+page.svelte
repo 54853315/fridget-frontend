@@ -27,7 +27,7 @@
       recipes = data || [];
     } catch (err) {
       console.error("加载推荐食谱超时:", err);
-      error = "食谱正在生成中...（预计 1 分钟）";
+      error = "食谱努力正在生成中...（预计 30 秒）";
       recipes = [];
       if (typeof window !== "undefined") {
         setTimeout(() => {
@@ -83,7 +83,7 @@
 {#if loading}
   <div class="loading-container">
     <CircularProgress class="loading-spinner" indeterminate />
-    <span class="loading-text">正在加载推荐食谱...</span>
+    <span class="loading-text">正在加载推荐食谱...（预计 1 分钟）</span>
   </div>
 {:else if error}
   <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px; padding: 20px;">
