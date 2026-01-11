@@ -285,13 +285,13 @@
           <div class="cele-stage-grid">
             <div class="cele-stage-copy">
               <div class="stage-chip-row">
-                <span class="stage-chip stage-chip-emphasis">{selectedRecipe.name || "今日菜品"}</span>
+                <span class="stage-chip stage-chip-emphasis">{selectedRecipe.cookingDifficultyLevel || "家常菜"}</span>
                 <span class="stage-chip stage-chip-soft">{formattedDate}</span>
               </div>
               <div class="stage-title-wrap">
                 <span class="stage-emblem">{celebrationPreset.badge}</span>
                 <div>
-                  <p class="stage-title">{celebrationPreset.title}</p>
+                  <p class="stage-title">{selectedRecipe.name}</p>
                   <p class="stage-tagline">{celebrationPreset.tagline}</p>
                 </div>
               </div>
